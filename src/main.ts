@@ -35,7 +35,7 @@ class App {
 
     const loadingEl = document.createElement('div');
     loadingEl.className = 'loading-screen';
-    loadingEl.innerHTML = '<p>記事を読み込んでいます...</p>';
+    loadingEl.innerHTML = '<p>Loading article...</p>';
     this.app.insertBefore(loadingEl, this.bottomPanel.element);
 
     try {
@@ -43,7 +43,7 @@ class App {
       this.currentArticle = article;
       this.showArticle(article);
     } catch (error) {
-      this.showError(error instanceof Error ? error.message : '記事を読み込めませんでした');
+      this.showError(error instanceof Error ? error.message : 'Failed to load article');
     }
   }
 
@@ -54,7 +54,7 @@ class App {
     // Back button
     const backBtn = document.createElement('button');
     backBtn.className = 'back-btn';
-    backBtn.textContent = '← 戻る';
+    backBtn.textContent = 'Back';
     backBtn.addEventListener('click', () => this.showUrlInput());
     this.app.insertBefore(backBtn, this.bottomPanel.element);
 
@@ -92,7 +92,7 @@ class App {
     } catch (error) {
       this.bottomPanel.update({
         type: 'error',
-        error: error instanceof Error ? error.message : '単語の意味を取得できませんでした'
+        error: error instanceof Error ? error.message : 'Failed to get word meaning'
       });
     }
   }
@@ -121,7 +121,7 @@ class App {
     } catch (error) {
       this.bottomPanel.update({
         type: 'error',
-        error: error instanceof Error ? error.message : '翻訳を取得できませんでした'
+        error: error instanceof Error ? error.message : 'Failed to get translation'
       });
     }
   }
@@ -134,7 +134,7 @@ class App {
     errorEl.className = 'error-screen';
     errorEl.innerHTML = `
       <p class="error-message">${message}</p>
-      <button class="retry-btn">もう一度試す</button>
+      <button class="retry-btn">Try Again</button>
     `;
 
     const retryBtn = errorEl.querySelector('.retry-btn');

@@ -51,7 +51,7 @@ describe('createUrlInput', () => {
       expect(input).toBeInstanceOf(HTMLInputElement);
       expect(input.type).toBe('url');
       expect(input.required).toBe(true);
-      expect(input.placeholder).toBe('英語ニュース記事のURLを貼り付け');
+      expect(input.placeholder).toBe('Paste an English news article URL...');
     });
 
     // Verifies submit button exists
@@ -61,7 +61,7 @@ describe('createUrlInput', () => {
 
       expect(button).toBeInstanceOf(HTMLButtonElement);
       expect(button.type).toBe('submit');
-      expect(button.textContent).toBe('読む');
+      expect(button.textContent).toBe('Read');
     });
 
     // Verifies hint text exists
@@ -70,9 +70,9 @@ describe('createUrlInput', () => {
       const hint = element.querySelector('.url-hint');
 
       expect(hint).toBeInstanceOf(HTMLParagraphElement);
-      expect(hint?.textContent).toContain('例:');
-      expect(hint?.textContent).toContain('bbc.com');
-      expect(hint?.textContent).toContain('cnn.com');
+      expect(hint?.textContent).toContain('BBC News');
+      expect(hint?.textContent).toContain('CNN');
+      expect(hint?.textContent).toContain('Guardian');
     });
   });
 

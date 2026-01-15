@@ -168,7 +168,7 @@ describe('App', () => {
       // Check loading screen
       const loadingScreen = appElement.querySelector('.loading-screen');
       expect(loadingScreen).toBeInstanceOf(HTMLElement);
-      expect(loadingScreen?.textContent).toContain('記事を読み込んでいます');
+      expect(loadingScreen?.textContent).toContain('Loading article');
 
       // Resolve and cleanup
       resolveArticle!(mockArticle);
@@ -271,7 +271,7 @@ describe('App', () => {
 
       await vi.waitFor(() => {
         const errorMessage = appElement.querySelector('.error-message');
-        expect(errorMessage?.textContent).toBe('記事を読み込めませんでした');
+        expect(errorMessage?.textContent).toBe('Failed to load article');
       });
     });
   });
@@ -305,7 +305,7 @@ describe('App', () => {
       await vi.waitFor(() => {
         const backBtn = appElement.querySelector('.back-btn');
         expect(backBtn).toBeInstanceOf(HTMLButtonElement);
-        expect(backBtn?.textContent).toBe('← 戻る');
+        expect(backBtn?.textContent).toBe('Back');
       });
     });
 
