@@ -84,7 +84,7 @@ function createSentence(
   // Long press handling for sentence translation
   let longPressTimer: ReturnType<typeof setTimeout> | null = null;
 
-  sentenceEl.addEventListener('touchstart', (e) => {
+  sentenceEl.addEventListener('touchstart', () => {
     longPressTimer = setTimeout(() => {
       options.onSentenceLongPress(sentence.text);
     }, 500);
