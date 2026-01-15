@@ -27,11 +27,11 @@ export function createBottomPanel(): {
         break;
 
       case 'loading':
-        contentEl.innerHTML = `<div class="loading">読み込み中...</div>`;
+        contentEl.innerHTML = `<div class="loading">Loading...</div>`;
         break;
 
       case 'error':
-        contentEl.innerHTML = `<div class="error">${escapeHtml(state.error || 'エラーが発生しました')}</div>`;
+        contentEl.innerHTML = `<div class="error">${escapeHtml(state.error || 'An error occurred')}</div>`;
         break;
 
       case 'word':

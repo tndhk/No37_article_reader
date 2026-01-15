@@ -95,7 +95,7 @@ describe('createBottomPanel', () => {
 
       const loading = element.querySelector('.loading');
       expect(loading).toBeInstanceOf(HTMLElement);
-      expect(loading?.textContent).toBe('読み込み中...');
+      expect(loading?.textContent).toBe('Loading...');
     });
   });
 
@@ -129,7 +129,7 @@ describe('createBottomPanel', () => {
       update({ type: 'error' });
 
       const error = element.querySelector('.error');
-      expect(error?.textContent).toBe('エラーが発生しました');
+      expect(error?.textContent).toBe('An error occurred');
     });
 
     // Error state: escapes HTML in error message (XSS prevention)

@@ -7,16 +7,22 @@ export function createUrlInput(options: UrlInputOptions): HTMLElement {
   container.className = 'url-input-container';
 
   container.innerHTML = `
+    <div class="app-branding">
+      <h1 class="app-title">English News Reader</h1>
+      <p class="app-tagline">Immersive reading for language learners</p>
+    </div>
     <form class="url-form">
       <input
         type="url"
         class="url-input"
-        placeholder="英語ニュース記事のURLを貼り付け"
+        placeholder="Paste an English news article URL..."
         required
+        autocomplete="off"
+        spellcheck="false"
       />
-      <button type="submit" class="submit-btn">読む</button>
+      <button type="submit" class="submit-btn"><span>Read</span></button>
     </form>
-    <p class="url-hint">例: https://www.bbc.com/news/... や https://edition.cnn.com/...</p>
+    <p class="url-hint">BBC News, CNN, The Guardian, and more</p>
   `;
 
   const form = container.querySelector('.url-form') as HTMLFormElement;
