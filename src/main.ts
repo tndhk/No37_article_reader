@@ -2,7 +2,7 @@ import { apiClient, ParsedArticle } from './services/api-client';
 import { cacheService } from './services/cache';
 import { createUrlInput } from './components/url-input';
 import { createArticleReader } from './components/article-reader';
-import { createBottomPanel, BottomPanelState } from './components/bottom-panel';
+import { createBottomPanel } from './components/bottom-panel';
 import './styles.css';
 
 class App {

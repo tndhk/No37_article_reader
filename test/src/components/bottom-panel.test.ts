@@ -10,8 +10,8 @@
  * - HTML escaping for XSS prevention
  */
 
-import { describe, it, expect, beforeEach, afterEach, vi } from 'vitest';
-import { createBottomPanel, BottomPanelState } from '../../../src/components/bottom-panel';
+import { describe, it, expect, beforeEach, afterEach } from 'vitest';
+import { createBottomPanel } from '../../../src/components/bottom-panel';
 import { WordMeaning } from '../../../src/services/api-client';
 
 describe('createBottomPanel', () => {
